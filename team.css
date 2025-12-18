@@ -1,0 +1,16 @@
+.primaryfill { fill: #00ba00; }
+.primarystroke { stroke: #00ba00; }
+
+text {
+	font-size: 45px;
+	font-family: 'OCR A Std';
+	-inkscape-font-specification: 'OCR A Std';
+}
+
+.heading {
+	font-size: 60px;
+}
+
+.subtext {
+	font-size: 30px;
+}
