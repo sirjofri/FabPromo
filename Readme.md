@@ -2,6 +2,17 @@
 
 These files can be included as submodules to the per-product repos.
 
+## Categories
+
+Let's define a few product categories. Each of the categories should get its own stylesheet with its own unique color.
+
+- Performance: products that are used to improve the performance. This includes topics like scalability
+- Team: Affects working in a team. Also includes topics like workflows, processes.
+- Game: Runtime gameplay products.
+- Developers: Tools that help programmers.
+
+## Usage
+
 To apply the style to the svg files, do the following:
 
 ### Add a stylesheet
