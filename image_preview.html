@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Preview</title>
+	<style type="text/css">
+body {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	background-color: #161616;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+h3 {
+	margin-top: 50px;
+}
+
+.preview {
+	width: 1122px;
+	height: 631.13px;
+	border-radius: 16px;
+	background-size: cover;
+}
+
+#thumbs {
+	margin-top: 20px;
+}
+
+.thumb {
+	border-radius: 8px;
+	width: 160px;
+	margin: 0px 10px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.thumb:first-of-type {
+	margin-left: 0px;
+}
+.thumb:last-of-type {
+	margin-right: 0px;
+}
+
+#thumbnail {
+	margin-top: 20px;
+	border-radius: 16px;
+	width: 368.25px;
+	height: 207.14px;
+	background-size: cover;
+}
+
+a.selected {
+	outline: solid 2px #fff;
+}
+	</style>
+	<script type="text/javascript" src="../preview.js"></script>
+	<script type="text/javascript"><!--
+function setImage(idx){
+	var path = "../" + preview_images[idx];
+	document.getElementById("fullpreview").style.backgroundImage = "url(\"" + path + "\")";
+	console.log("set img: ", path);
+	
+	var children = document.getElementById("thumbs").children;
+	for (var i = 0; i < children.length; i++) {
+		if (i == idx)
+			children[i].classList.add("selected");
+		else
+			children[i].classList.remove("selected");
+	}
+}
+
+function loadpreviews(){
+	var cont = document.getElementById("thumbs");
+	var template = document.getElementById("thumblate").innerHTML;
+	
+	preview_images.forEach((img, idx) => {
+		c = template.replace("SRC", "../" + img).replace("IDX", idx)
+		cont.innerHTML += c;
+	});
+	
+	cont = document.getElementById("thumbnail");
+	cont.style.backgroundImage = "url(\"../" + thumbnail + "\")";
+}
+
+window.onload = function(){
+	loadpreviews();
+	setImage(0);
+}
+	//--></script>
+</head>
+<body>
+	<h3>Preview Image</h3>
+	<div class="preview" id="fullpreview">
+	</div>
+	<div id="thumbs">
+	</div>
+	
+	<h3>Thumbnail Max Size</h3>
+	<div id="thumbnail">
+	</div>
+	
+	<div id="thumblate" style="display:none;">
+		<a onclick="setImage(IDX);" class="thumb">
+			<img src="SRC" class="thumb">
+		</a>
+	</div>
+</body>
+</html>
