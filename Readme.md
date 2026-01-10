@@ -11,7 +11,16 @@ Let's define a few product categories. Each of the categories should get its own
 - Game: Runtime gameplay products.
 - Developers: Tools that help programmers.
 
-## Usage
+## Guidelines
+
+- `primaryfill` colors only for important words (highlights)
+- Slide headings and title should be white.
+- The plugin icon can be used as a slide heading start.
+- Slide heading top left.
+
+---
+
+## Stylesheet Usage
 
 To apply the style to the svg files, do the following:
 
